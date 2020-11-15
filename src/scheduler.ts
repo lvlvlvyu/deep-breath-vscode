@@ -8,7 +8,7 @@ export class Scheduler {
     public static timerEnabled = true
     public static focusTime = 0
     public static TIMER_ACC = 1000
-    public static threshold =  1000
+    public static threshold = 10 * 1000
     public constructor(private context: vscode.ExtensionContext) {
 
     }
@@ -23,6 +23,7 @@ export class Scheduler {
 
     public static disableBreath(context: vscode.ExtensionContext) {
         this.stopTimer(context)
+        ReminderView.quitPanel(context)
         this.timerEnabled = false
     }
 
@@ -42,8 +43,8 @@ export class Scheduler {
             this.timerEnabled = false
             this.onTimeout(context)
         }
-
     }
+    
     public static start(context: vscode.ExtensionContext) {
         if (!this.timerEnabled || Scheduler.timerId != undefined)
             return

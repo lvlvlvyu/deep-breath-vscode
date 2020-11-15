@@ -2,7 +2,7 @@
 	"name": "deepbreath",
 	"displayName": "DeepBreath",
 	"description": "DeepBreath",
-	"version": "0.0.3",
+	"version": "0.0.5",
 	"publisher": "vegetabler",
 	"engines": {
 		"vscode": "^1.51.0"
@@ -19,16 +19,15 @@
 		"commands": [
 			{
 				"command": "deepbreath.start",
-				"title": "激活该插件"
+				"title": "start breath"
 			},
 			{
-				"key": "f11",
 				"command": "deepbreath.enablebreath",
-				"title": "启用该插件"
+				"title": "enable breath"
 			},
 			{
 				"command": "deepbreath.disablebreath",
-				"title": "禁用该插件"
+				"title": "disable breath"
 			}
 		]
 	},

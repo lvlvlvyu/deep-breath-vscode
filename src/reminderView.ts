@@ -28,10 +28,15 @@ export class ReminderView {
 
             this.panel.onDidDispose(() => {
                 this.panel = undefined;
-                Scheduler.timerEnabled = true
-                Scheduler.start(context);
+                Scheduler.timerEnabled=true
+                Scheduler.start(context)
             });
         }
+    }
+
+    public static quitPanel(context:vscode.ExtensionContext){
+        this.panel?.dispose()
+        Scheduler.stopTimer(context)
     }
 
     protected static generateHtml(): string {
